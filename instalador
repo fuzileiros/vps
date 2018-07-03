@@ -16,40 +16,40 @@ fi
 #Menu Principal
 
 rm -rf /bin/vpspack 2>/dev/null
-wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/vpspack > /bin/vpspack
+wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vps/master/vpspack > /bin/vpspack
 chmod +x /bin/vpspack
 #Fim do Menu Principal
 
 rm -rf /bin/limite 2>/dev/null
-wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/limite > /bin/limite
+wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vps/master/limite > /bin/limite
 chmod +x /bin/limite
 #Fim Menu
 
 #Menus Gerenciadores
 #01
-wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarusuarios -O /bin/gerenciarusuarios
+wget raw.githubusercontent.com/fuzileiros/vps/master/gerenciarusuarios -O /bin/gerenciarusuarios
 chmod +x /bin/gerenciarusuarios
 #02
-wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarferramentas -O /bin/gerenciarferramentas
+wget raw.githubusercontent.com/fuzileiros/vps/master/gerenciarferramentas -O /bin/gerenciarferramentas
 chmod +x /bin/gerenciarferramentas
 #03
 #03
-wget https://raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarbackup -O /bin/gerenciarbackup
+wget https://raw.githubusercontent.com/fuzileiros/vps/master/gerenciarbackup -O /bin/gerenciarbackup
 chmod +x /bin/gerenciarbackup
 #04
-wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarsquid -O /bin/gerenciarsquid
+wget raw.githubusercontent.com/fuzileiros/vps/master/gerenciarsquid -O /bin/gerenciarsquid
 chmod +x /bin/gerenciarsquid
 #05
-wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarsistema -O /bin/gerenciarsistema
+wget raw.githubusercontent.com/fuzileiros/vps/master/gerenciarsistema -O /bin/gerenciarsistema
 chmod +x /bin/gerenciarsistema
 #06
-wget raw.githubusercontent.com/fuzileiros/vpn/master/menuinstalacao -O /bin/menuinstalacao
+wget raw.githubusercontent.com/fuzileiros/vps/master/menuinstalacao -O /bin/menuinstalacao
 chmod +x /bin/menuinstalacao
 #08
-wget raw.githubusercontent.com/fuzileiros/vpn/master/sobre -O /bin/sobre
+wget raw.githubusercontent.com/fuzileiros/vps/master/sobre -O /bin/sobre
 chmod +x /bin/sobre
 #09
-wget raw.githubusercontent.com/fuzileiros/vpn/master/mais -O /bin/mais
+wget raw.githubusercontent.com/fuzileiros/vps/master/mais -O /bin/mais
 chmod +x /bin/mais
 
 
@@ -58,47 +58,47 @@ chmod +x /bin/mais
 #Menu Gerenciar Usuarios
 
 #01
-wget raw.githubusercontent.com/fuzileiros/vpn/master/criarusuario -O /bin/criarusuario
+wget raw.githubusercontent.com/fuzileiros/vps/master/criarusuario -O /bin/criarusuario
 chmod +x /bin/criarusuario
 #02
-wget raw.githubusercontent.com/fuzileiros/vpn/master/criarteste -O /bin/criarteste
+wget raw.githubusercontent.com/fuzileiros/vps/master/criarteste -O /bin/criarteste
 chmod +x /bin/criarteste
 #03
-wget raw.githubusercontent.com/fuzileiros/vpn/master/detalhesusuarios -O /bin/detalhesusuarios
+wget raw.githubusercontent.com/fuzileiros/vps/master/detalhesusuarios -O /bin/detalhesusuarios
 chmod +x /bin/detalhesusuarios
 #04
-wget raw.githubusercontent.com/fuzileiros/vpn/master/monitoring -O /bin/monitoring
+wget raw.githubusercontent.com/fuzileiros/vps/master/monitoring -O /bin/monitoring
 chmod +x /bin/monitoring
 #05
-wget raw.githubusercontent.com/fuzileiros/vpn/master/monitoringopen -O /bin/monitoringopen
+wget raw.githubusercontent.com/fuzileiros/vps/master/monitoringopen -O /bin/monitoringopen
 chmod +x /bin/monitoringopen
 #06
-wget raw.githubusercontent.com/fuzileiros/vpn/master/changepassword -O /bin/changepassword
+wget raw.githubusercontent.com/fuzileiros/vps/master/changepassword -O /bin/changepassword
 chmod +x /bin/changepassword
 #07
-wget raw.githubusercontent.com/fuzileiros/vpn/master/alterardata -O /bin/alterardata
+wget raw.githubusercontent.com/fuzileiros/vps/master/alterardata -O /bin/alterardata
 chmod +x /bin/alterardata
 #08
-wget raw.githubusercontent.com/fuzileiros/vpn/master/alterarlimite -O /bin/alterarlimite
+wget raw.githubusercontent.com/fuzileiros/vps/master/alterarlimite -O /bin/alterarlimite
 chmod +x /bin/alterarlimite
 #09
-wget raw.githubusercontent.com/fuzileiros/vpn/master/userdisconnect -O /bin/userdisconnect
+wget raw.githubusercontent.com/fuzileiros/vps/master/userdisconnect -O /bin/userdisconnect
 chmod +x /bin/userdisconnect
 #10
-wget raw.githubusercontent.com/fuzileiros/vpn/master/deletarusuario -O /bin/deletarusuario
+wget raw.githubusercontent.com/fuzileiros/vps/master/deletarusuario -O /bin/deletarusuario
 chmod +x /bin/deletarusuario
 #11
-wget raw.githubusercontent.com/fuzileiros/vpn/master/deletarexpirados -O /bin/deletarexpirados
+wget raw.githubusercontent.com/fuzileiros/vps/master/deletarexpirados -O /bin/deletarexpirados
 chmod +x /bin/deletarexpirados
 #12
-wget raw.githubusercontent.com/fuzileiros/vpn/master/deletartodos -O /bin/deletartodos
+wget raw.githubusercontent.com/fuzileiros/vps/master/deletartodos -O /bin/deletartodos
 chmod +x /bin/deletartodos
 #FIM MENU GERENCIAR USUARIOS
 
 #MENU GERENCIAR FERRAMENTAS
 #03
 rm -rf /bin/speedtest.py 2>/dev/null
-wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/speedtest.py > /bin/speedtest.py
+wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vps/master/speedtest.py > /bin/speedtest.py
 chmod +x /bin/speedtest.py
 
 #FIM DO MENU FERRAMENTAS
@@ -106,48 +106,48 @@ chmod +x /bin/speedtest.py
 
 #MENU GERENCIAR SQUID3
 #01
-wget raw.githubusercontent.com/fuzileiros/vpn/master/adicionarhost -O /bin/adicionarhost
+wget raw.githubusercontent.com/fuzileiros/vps/master/adicionarhost -O /bin/adicionarhost
 chmod +x /bin/adicionarhost
 #02
-wget raw.githubusercontent.com/fuzileiros/vpn/master/etc-hosts -O /bin/etc-hosts
+wget raw.githubusercontent.com/fuzileiros/vps/master/etc-hosts -O /bin/etc-hosts
 chmod +x /bin/etc-hosts
 #03
-wget raw.githubusercontent.com/fuzileiros/vpn/master/removerhost -O /bin/removerhost
+wget raw.githubusercontent.com/fuzileiros/vps/master/removerhost -O /bin/removerhost
 chmod +x /bin/removerhost
 #04
-wget raw.githubusercontent.com/fuzileiros/vpn/master/editarsquid3 -O /bin/editarsquid3
+wget raw.githubusercontent.com/fuzileiros/vps/master/editarsquid3 -O /bin/editarsquid3
 chmod +x /bin/editarsquid3
 #05
-wget raw.githubusercontent.com/fuzileiros/vpn/master/adicionarporta -O /bin/adicionarporta
+wget raw.githubusercontent.com/fuzileiros/vps/master/adicionarporta -O /bin/adicionarporta
 chmod +x /bin/adicionarporta
 #06
-wget raw.githubusercontent.com/fuzileiros/vpn/master/removerporta -O /bin/removerporta
+wget raw.githubusercontent.com/fuzileiros/vps/master/removerporta -O /bin/removerporta
 chmod +x /bin/removerporta
 
 #FIM DO MENU SQUID
 
 #MENU SISTEMA
 #01
-wget raw.githubusercontent.com/fuzileiros/vpn/master/atualizarsistema -O /bin/atualizarsistema
+wget raw.githubusercontent.com/fuzileiros/vps/master/atualizarsistema -O /bin/atualizarsistema
 chmod +x /bin/atualizarsistema
 #02
-wget raw.githubusercontent.com/fuzileiros/vpn/master/atualizarscript -O /bin/atualizarscript
+wget raw.githubusercontent.com/fuzileiros/vps/master/atualizarscript -O /bin/atualizarscript
 chmod +x /bin/atualizarscript
 #04
-wget raw.githubusercontent.com/fuzileiros/vpn/master/alterarroot -O /bin/alterarroot
+wget raw.githubusercontent.com/fuzileiros/vps/master/alterarroot -O /bin/alterarroot
 chmod +x /bin/alterarroot
 #05
 #06
 #07
 #MENU BACKUP
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/backupsmanager-remove -O /bin/backupsmanager-remove
+wget raw.githubusercontent.com/fuzileiros/vps/master/backupsmanager-remove -O /bin/backupsmanager-remove
 chmod +x /bin/backupsmanager-remove
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/backupsmanager-import -O /bin/backupsmanager-import
+wget raw.githubusercontent.com/fuzileiros/vps/master/backupsmanager-import -O /bin/backupsmanager-import
 chmod +x /bin/backupsmanager-import
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/backupsmanager-export -O /bin/backupsmanager-export
+wget raw.githubusercontent.com/fuzileiros/vps/master/backupsmanager-export -O /bin/backupsmanager-export
 chmod +x /bin/backupsmanager-export
 
 #FIM DO MENU SISTEMA
@@ -156,47 +156,47 @@ chmod +x /bin/backupsmanager-export
 #MENU INSTALAÇÃO
 
 #01
-wget raw.githubusercontent.com/fuzileiros/vpn/master/ovpn -O /bin/ovpn
+wget raw.githubusercontent.com/fuzileiros/vps/master/ovpn -O /bin/ovpn
 chmod +x /bin/ovpn
 #02
-wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5 -O /bin/socks5
+wget raw.githubusercontent.com/fuzileiros/vps/master/socks5 -O /bin/socks5
 chmod +x /bin/socks5
 #03
-wget raw.githubusercontent.com/fuzileiros/vpn/master/dropbear -O /bin/dropbear
+wget raw.githubusercontent.com/fuzileiros/vps/master/dropbear -O /bin/dropbear
 chmod +x /bin/dropbear
 
 
 #FIM DO MENU INSTALAÇÃO
 
 #LIMITE MENU
-wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-menu -O /bin/limiter-menu
+wget raw.githubusercontent.com/fuzileiros/vps/master/limiter-menu -O /bin/limiter-menu
 chmod +x /bin/limiter-menu
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-start -O /bin/limiter-start
+wget raw.githubusercontent.com/fuzileiros/vps/master/limiter-start -O /bin/limiter-start
 chmod +x /bin/limiter-start
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-messages -O /bin/limiter-messages
+wget raw.githubusercontent.com/fuzileiros/vps/master/limiter-messages -O /bin/limiter-messages
 chmod +x /bin/limiter-messages
 
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/openvpn -O /bin/openvpn
+wget raw.githubusercontent.com/fuzileiros/vps/master/openvpn -O /bin/openvpn
 chmod +x /bin/openvpn
 
 #SOCKS MENU
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5menu -O /bin/socks5menu
+wget raw.githubusercontent.com/fuzileiros/vps/master/socks5menu -O /bin/socks5menu
 chmod +x /bin/socks5menu
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5changeport -O /bin/socks5changeport
+wget raw.githubusercontent.com/fuzileiros/vps/master/socks5changeport -O /bin/socks5changeport
 chmod +x /bin/socks5changeport
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5banner -O /bin/socks5banner
+wget raw.githubusercontent.com/fuzileiros/vps/master/socks5banner -O /bin/socks5banner
 chmod +x /bin/socks5banner
 
 
 #NANO ETC HOSTS
 
-wget raw.githubusercontent.com/fuzileiros/vpn/master/hosts && bash hosts
+wget raw.githubusercontent.com/fuzileiros/vps/master/hosts && bash hosts
 
 
 

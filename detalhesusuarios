@@ -1,0 +1,57 @@
+#!/bin/bash
+clear
+echo "Edited by @ColtSeals"
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+echo "Conectando ao NerdologiaVPS..."
+sleep 0.4
+echo "Checando Permissão..."
+sleep 0.2
+echo -e "${green}Permissão Aceita...${NC}"
+sleep 0.2
+clear
+
+#!/bin/bash
+
+DATABASE="/home/DATABASE/users.db"
+
+clear
+echo ""
+echo -e "\033[01;30m -------------------------------------------------------------------------------"
+echo -e " \033[0;30;46m                             Detalhes  Usuarios                               \033[0m"
+echo -e "\033[01;30m -------------------------------------------------------------------------------"
+echo -e " \033[01;37;44m USUARIO             SENHA             LIMITE         VALIDADE        STATUS  \033[0m"
+echo ""
+cat $DATABASE | sort | while read DB; do
+  DB1=$(echo $DB | cut -d " " -f1)
+  DB2=$(echo $DB | cut -d " " -f2)
+  DB3=$(echo $DB | cut -d " " -f3)
+  EXPIRE=$(chage -l $DB1 | grep -E "Account expires" | cut -d " " -f3-)
+    if [[ $EXPIRE = "never" ]]; then
+      echo -ne " \033[01;33m"; printf '%-21s%-18s%-15s%s' " $DB1" "$DB2" "$DB3" "SEM CADASTRO"; tput setaf 2 ; tput bold ; echo "    ATIVO " ; tput sgr0
+    else
+      DATEBR=$(date -d "$EXPIRE" '+%Y%m%d')
+      TODAY=$(date -d today '+%Y%m%d')
+    if [ $TODAY -ge $DATEBR ]; then
+      DATE=$(date -d "$EXPIRE" '+%d/%m/%Y')
+      echo -ne " \033[01;33m"; printf '%-21s%-18s%-15s%s' " $DB1" "$DB2" "$DB3" "$DATE"; tput setaf 1 ; tput bold ; echo "      EXPIRADO " ; tput sgr0
+    else
+    DATE=$(date -d "$EXPIRE" '+%d/%m/%Y')
+      echo -ne " \033[01;33m"; printf '%-21s%-18s%-15s%s' " $DB1" "$DB2" "$DB3" "$DATE"; tput setaf 2 ; tput bold ; echo "      ATIVO " ; tput sgr0
+    fi
+    fi
+      echo -e "\033[01;30m ------------------------------------------------------------------------------"
+    done
+  echo ""
+  NUMBER1=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | wc -l)
+   if [ $NUMBER1 = "0" ]; then
+  echo -e "\033[01;32m TOTAL DE USUARIOS:\033[01;37m 0"
+else
+  echo -e "\033[01;32m TOTAL DE USUARIOS:\033[01;37m $NUMBER1"
+fi                  
+echo ""
+echo -ne "\033[01;36m APERTE A TECLA ENTER PARA VOLTAR AO MENU..."
+read ENTER
+vpn
+exit

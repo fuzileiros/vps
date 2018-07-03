@@ -1,0 +1,241 @@
+#!/bin/bash
+cd
+if [ $(id -u) != 0 ]
+then
+echo "Execute o script como root"
+exit
+fi
+echo -e "\033[1;30mInstalando...\033[0m"
+mkdir /etc/VpsPackdir 2>/dev/null
+mkdir /etc/VpsPackdir/limite 2>/dev/null
+mkdir /etc/VpsPackdir/senha 2>/dev/null
+
+if [ ! -d "/home/DATABASE" ]; then
+  mkdir /home/DATABASE; mkdir /home/DATABASE/Backups; touch /home/DATABASE/bannerssh.txt; touch /home/DATABASE/messages.txt; touch /home/DATABASE/users.db; awk -F : '$3 >= 500 { print $1 " **** 1" }' /etc/passwd | grep -v "nobody" | sort > /home/DATABASE/users.db
+fi
+#Menu Principal
+
+rm -rf /bin/vpspack 2>/dev/null
+wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/vpspack > /bin/vpspack
+chmod +x /bin/vpspack
+#Fim do Menu Principal
+
+rm -rf /bin/limite 2>/dev/null
+wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/limite > /bin/limite
+chmod +x /bin/limite
+#Fim Menu
+
+#Menus Gerenciadores
+#01
+wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarusuarios -O /bin/gerenciarusuarios
+chmod +x /bin/gerenciarusuarios
+#02
+wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarferramentas -O /bin/gerenciarferramentas
+chmod +x /bin/gerenciarferramentas
+#03
+#03
+wget https://raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarbackup -O /bin/gerenciarbackup
+chmod +x /bin/gerenciarbackup
+#04
+wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarsquid -O /bin/gerenciarsquid
+chmod +x /bin/gerenciarsquid
+#05
+wget raw.githubusercontent.com/fuzileiros/vpn/master/gerenciarsistema -O /bin/gerenciarsistema
+chmod +x /bin/gerenciarsistema
+#06
+wget raw.githubusercontent.com/fuzileiros/vpn/master/menuinstalacao -O /bin/menuinstalacao
+chmod +x /bin/menuinstalacao
+#08
+wget raw.githubusercontent.com/fuzileiros/vpn/master/sobre -O /bin/sobre
+chmod +x /bin/sobre
+#09
+wget raw.githubusercontent.com/fuzileiros/vpn/master/mais -O /bin/mais
+chmod +x /bin/mais
+
+
+#Fim de submenus
+
+#Menu Gerenciar Usuarios
+
+#01
+wget raw.githubusercontent.com/fuzileiros/vpn/master/criarusuario -O /bin/criarusuario
+chmod +x /bin/criarusuario
+#02
+wget raw.githubusercontent.com/fuzileiros/vpn/master/criarteste -O /bin/criarteste
+chmod +x /bin/criarteste
+#03
+wget raw.githubusercontent.com/fuzileiros/vpn/master/detalhesusuarios -O /bin/detalhesusuarios
+chmod +x /bin/detalhesusuarios
+#04
+wget raw.githubusercontent.com/fuzileiros/vpn/master/monitoring -O /bin/monitoring
+chmod +x /bin/monitoring
+#05
+wget raw.githubusercontent.com/fuzileiros/vpn/master/monitoringopen -O /bin/monitoringopen
+chmod +x /bin/monitoringopen
+#06
+wget raw.githubusercontent.com/fuzileiros/vpn/master/changepassword -O /bin/changepassword
+chmod +x /bin/changepassword
+#07
+wget raw.githubusercontent.com/fuzileiros/vpn/master/alterardata -O /bin/alterardata
+chmod +x /bin/alterardata
+#08
+wget raw.githubusercontent.com/fuzileiros/vpn/master/alterarlimite -O /bin/alterarlimite
+chmod +x /bin/alterarlimite
+#09
+wget raw.githubusercontent.com/fuzileiros/vpn/master/userdisconnect -O /bin/userdisconnect
+chmod +x /bin/userdisconnect
+#10
+wget raw.githubusercontent.com/fuzileiros/vpn/master/deletarusuario -O /bin/deletarusuario
+chmod +x /bin/deletarusuario
+#11
+wget raw.githubusercontent.com/fuzileiros/vpn/master/deletarexpirados -O /bin/deletarexpirados
+chmod +x /bin/deletarexpirados
+#12
+wget raw.githubusercontent.com/fuzileiros/vpn/master/deletartodos -O /bin/deletartodos
+chmod +x /bin/deletartodos
+#FIM MENU GERENCIAR USUARIOS
+
+#MENU GERENCIAR FERRAMENTAS
+#03
+rm -rf /bin/speedtest.py 2>/dev/null
+wget -o /dev/null -O- raw.githubusercontent.com/fuzileiros/vpn/master/speedtest.py > /bin/speedtest.py
+chmod +x /bin/speedtest.py
+
+#FIM DO MENU FERRAMENTAS
+
+
+#MENU GERENCIAR SQUID3
+#01
+wget raw.githubusercontent.com/fuzileiros/vpn/master/adicionarhost -O /bin/adicionarhost
+chmod +x /bin/adicionarhost
+#02
+wget raw.githubusercontent.com/fuzileiros/vpn/master/etc-hosts -O /bin/etc-hosts
+chmod +x /bin/etc-hosts
+#03
+wget raw.githubusercontent.com/fuzileiros/vpn/master/removerhost -O /bin/removerhost
+chmod +x /bin/removerhost
+#04
+wget raw.githubusercontent.com/fuzileiros/vpn/master/editarsquid3 -O /bin/editarsquid3
+chmod +x /bin/editarsquid3
+#05
+wget raw.githubusercontent.com/fuzileiros/vpn/master/adicionarporta -O /bin/adicionarporta
+chmod +x /bin/adicionarporta
+#06
+wget raw.githubusercontent.com/fuzileiros/vpn/master/removerporta -O /bin/removerporta
+chmod +x /bin/removerporta
+
+#FIM DO MENU SQUID
+
+#MENU SISTEMA
+#01
+wget raw.githubusercontent.com/fuzileiros/vpn/master/atualizarsistema -O /bin/atualizarsistema
+chmod +x /bin/atualizarsistema
+#02
+wget raw.githubusercontent.com/fuzileiros/vpn/master/atualizarscript -O /bin/atualizarscript
+chmod +x /bin/atualizarscript
+#04
+wget raw.githubusercontent.com/fuzileiros/vpn/master/alterarroot -O /bin/alterarroot
+chmod +x /bin/alterarroot
+#05
+#06
+#07
+#MENU BACKUP
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/backupsmanager-remove -O /bin/backupsmanager-remove
+chmod +x /bin/backupsmanager-remove
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/backupsmanager-import -O /bin/backupsmanager-import
+chmod +x /bin/backupsmanager-import
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/backupsmanager-export -O /bin/backupsmanager-export
+chmod +x /bin/backupsmanager-export
+
+#FIM DO MENU SISTEMA
+
+
+#MENU INSTALAÇÃO
+
+#01
+wget raw.githubusercontent.com/fuzileiros/vpn/master/ovpn -O /bin/ovpn
+chmod +x /bin/ovpn
+#02
+wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5 -O /bin/socks5
+chmod +x /bin/socks5
+#03
+wget raw.githubusercontent.com/fuzileiros/vpn/master/dropbear -O /bin/dropbear
+chmod +x /bin/dropbear
+
+
+#FIM DO MENU INSTALAÇÃO
+
+#LIMITE MENU
+wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-menu -O /bin/limiter-menu
+chmod +x /bin/limiter-menu
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-start -O /bin/limiter-start
+chmod +x /bin/limiter-start
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/limiter-messages -O /bin/limiter-messages
+chmod +x /bin/limiter-messages
+
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/openvpn -O /bin/openvpn
+chmod +x /bin/openvpn
+
+#SOCKS MENU
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5menu -O /bin/socks5menu
+chmod +x /bin/socks5menu
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5changeport -O /bin/socks5changeport
+chmod +x /bin/socks5changeport
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/socks5banner -O /bin/socks5banner
+chmod +x /bin/socks5banner
+
+
+#NANO ETC HOSTS
+
+wget raw.githubusercontent.com/fuzileiros/vpn/master/hosts && bash hosts
+
+
+
+#FIM LIMITE MENU
+
+
+cp /bin/vpspack /bin/VPN
+cp /bin/gerenciarusuarios /bin/Usuarios
+cp /bin/gerenciarferramentas /bin/Ferramentas
+cp /bin/gerenciaropen /bin/
+cp /bin/gerenciarsquid /bin/Squid
+cp /bin/gerenciarsistema /bin/Sistema
+cp /bin/menuinstalacao /bin/Instalação
+
+cp /bin/vpspack /bin/vpn
+cp /bin/gerenciarusuarios /bin/usuarios
+cp /bin/gerenciarferramentas /bin/ferramentas
+cp /bin/gerenciaropen /bin/open
+cp /bin/gerenciarsquid /bin/squid
+cp /bin/gerenciarsistema /bin/sistema
+cp /bin/menuinstalacao /bin/instalação
+
+
+
+
+
+echo vpspack >> ~/.bashrc
+
+
+
+
+
+clear
+rm -rf install
+clear
+sudo apt-get install python
+	echo ""
+sleep 1s
+echo -e "\033[0m"
+vpn
+exit
+fi

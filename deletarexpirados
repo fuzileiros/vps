@@ -1,0 +1,56 @@
+#!/bin/bash
+clear
+echo "Edited by @ColtSeals"
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+echo "Conectando ao NerdologiaVPS..."
+sleep 0.4
+echo "Checando Permissão..."
+sleep 0.2
+echo -e "${green}Permissão Aceita...${NC}"
+sleep 0.2
+clear
+#!/bin/bash
+
+DATABASE="/home/DATABASE/users.db"
+
+clear
+echo -e "\033[01;36mLista de usuários e data de expiração do mesmo:"; echo ""
+NUMBER=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
+if [ $NUMBER = "0" ]; then
+  echo -e "\033[01;33mVocê não possui nenhum usuário SSH criado no momento!"
+  echo ""
+  echo -e "\033[01;33mCrie um usuário SSH para prosseguir com esta função!"
+  echo ""
+  echo -e "\033[01;36mAPERTE A TECLA ENTER PARA VOLTAR AO MENU..."
+  read ENTER
+  h
+  exit
+else
+  for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
+    EXPIRE=$(chage -l $USERS | grep -E "Account expires" | cut -d " " -f3-)
+    if [[ $EXPIRE = "never" ]]; then
+      echo -ne "\033[01;33m$(printf '%-35s%s\n' " $USERS" "Nunca")"; echo -e "\033[01;32m      (ATIVO) [Não removido]"
+    else
+      DATEBR=$(date -d "$EXPIRE" '+%Y%m%d')
+      TODAY=$(date -d today '+%Y%m%d')
+    if [ $TODAY -ge $DATEBR ]; then
+      DATE=$(date -d "$EXPIRE" '+%d/%m/%Y')
+      echo -ne "\033[01;33m$(printf '%-35s%s\n' " $USERS" "$DATE")"; echo -e "\033[01;31m (EXPIRADO) [Removido]"
+      pkill -f $USERS
+      userdel $USERS
+      cat $DATABASE | grep -wv "$USERS" > remove.txt
+      mv remove.txt $DATABASE
+    else
+      DATE=$(date -d "$EXPIRE" '+%d/%m/%Y')
+      echo -ne "\033[01;33m$(printf '%-35s%s\n' " $USERS" "$DATE")"; echo -e "\033[01;32m (ATIVO) [Não removido]"
+    fi
+    fi
+  done
+fi
+echo ""
+echo -e "\033[01;36mAPERTE A TECLA ENTER PARA VOLTAR AO MENU..."
+read ENTER
+VPN
+exit

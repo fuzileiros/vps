@@ -236,6 +236,6 @@ sudo apt-get install python
 	echo ""
 sleep 1s
 echo -e "\033[0m"
-ovpn
+openvpn
 exit
 fi

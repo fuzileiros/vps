@@ -108,6 +108,7 @@ www.portalsva2.vivo.com.br/captive-static/tarif-def/pd/index.html
 www.portalsva2.vivo.com.br/captive-static/tarif-def/cd/index.html
 navegue.vivo.com.br/controle/
 navegue.vivo.com.br/pre
+/?
 www.navegue.vivo.com.br/controle/
 www.navegue.vivo.com.br/pre" > /etc/payloads
 }
@@ -128,6 +129,8 @@ http_port 8799
 http_port 3128
 visible_hostname ColtSeals
 acl ip dstdomain $ip
+acl s dstdomain -i /?
+http_access allow s
 http_access allow ip" > /etc/squid/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
@@ -164,6 +167,8 @@ http_port 8799
 http_port 3128
 visible_hostname ColtSeals
 acl ip dstdomain $ip
+acl s dstdomain -i /?
+http_access allow s
 http_access allow ip" > /etc/squid3/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
@@ -198,6 +203,8 @@ http_port 8799
 http_port 3128
 visible_hostname ColtSeals
 acl ip dstdomain $ip
+acl s dstdomain -i /?
+http_access allow s
 http_access allow ip" > /etc/squid/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
@@ -232,6 +239,8 @@ http_port 8799
 http_port 3128
 visible_hostname ColtSeals
 acl ip dstdomain $ip
+acl s dstdomain -i /?
+http_access allow s
 http_access allow ip" > /etc/squid3/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
@@ -268,6 +277,8 @@ http_port 8799
 http_port 3128
 visible_hostname ColtSeals
 acl ip dstdomain $ip
+acl s dstdomain -i /?
+http_access allow s
 http_access allow ip" > /etc/squid/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
@@ -304,6 +315,8 @@ http_port 8799
 http_port 3128
 visible_hostname ColtSeals
 acl ip dstdomain $ip
+acl s dstdomain -i /?
+http_access allow s
 http_access allow ip" > /etc/squid*/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept

@@ -115,6 +115,7 @@ echo -e "\033[01;30m ----------------------------------------------------------"
       echo -ne "\033[01;33m$(printf '%-36s%s\n' "  $USERS" "$DATE")"; echo -e "\033[01;32m (ATIVO)"
     fi
     fi
+    echo -e "\033[01;30m ----------------------------------------------------------"
   done
   echo ""
   echo -e "\033[01;32m  Data de expiração do usuário alterada com sucesso!"

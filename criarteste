@@ -41,6 +41,7 @@ if [ $NUMBER = "0" ]; then
 else
   for USERS in `awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort`; do
     echo -ne "\033[01;33m"; echo $USERS
+    echo -e "\033[01;30m ----------------------------------------------------------"
   done
 fi
 echo ""
